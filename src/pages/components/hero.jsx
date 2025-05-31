@@ -11,9 +11,9 @@ import torta from '../../assets/torta-de-limao-e-merengue.avif'
 
 
 
-const Hero = () => {
+const Hero = ({ addToCart }) => {
     const [activeCategory, setActiveCategory] = useState("lanches");
-    const [cart, setCart] = useState([]);
+ 
 
     const products = [
         {
@@ -48,7 +48,7 @@ const Hero = () => {
             image: refri1,
             category: "bebidas"
         },
-         {
+        {
             id: 5,
             name: "Suco Natural",
             description: "Laranja, limão, maracujá ou acerola - 500ml",
@@ -58,23 +58,23 @@ const Hero = () => {
         },
 
         {
-             id: 6,
+            id: 6,
             name: "Agua Natural",
             description: "Água mineral sem gás ou com gás - 500ml",
             price: 3.90,
             image: agua,
             category: "bebidas"
         },
-         {
-             id: 7,
+        {
+            id: 7,
             name: "Brownie com Sorvete",
             description: "Brownie de chocolate quente com sorvete de baunilha",
             price: 14.90,
             image: brownie,
             category: "sobremesas"
         },
-         {
-             id: 7,
+        {
+            id: 8,
             name: "Pudim de Leite",
             description: "Pudim caseiro cremoso com calda de caramelo",
             price: 12.90,
@@ -82,7 +82,7 @@ const Hero = () => {
             category: "sobremesas"
         },
         {
-             id: 7,
+            id: 9,
             name: "Torta de Limão",
             description: "Torta de limão cremoso com raspa de limão",
             price: 13.00,
@@ -93,9 +93,7 @@ const Hero = () => {
 
     const filteredProducts = products.filter((product) => product.category === activeCategory);
 
-    const addToCart = (product) => {
-        setCart([...cart, product]);
-    };
+    
 
 
     return (
@@ -112,8 +110,8 @@ const Hero = () => {
                     <button
                         onClick={() => setActiveCategory("lanches")}
                         className={`px-6 py-2 rounded-xl shadow font-bold text-lg sm:text-xl transition ${activeCategory === "lanches"
-                                ? "bg-orange-400 text-white"
-                                : "bg-white text-gray-700 hover:bg-orange-100"
+                            ? "bg-orange-400 text-white"
+                            : "bg-white text-gray-700 hover:bg-orange-100"
                             }`}
                     >
                         Lanches
@@ -121,8 +119,8 @@ const Hero = () => {
                     <button
                         onClick={() => setActiveCategory("bebidas")}
                         className={`px-6 py-2 rounded-xl shadow font-bold text-lg sm:text-xl transition ${activeCategory === "bebidas"
-                                ? "bg-orange-400 text-white"
-                                : "bg-white text-gray-700 hover:bg-orange-100"
+                            ? "bg-orange-400 text-white"
+                            : "bg-white text-gray-700 hover:bg-orange-100"
                             }`}
                     >
                         Bebidas
@@ -130,8 +128,8 @@ const Hero = () => {
                     <button
                         onClick={() => setActiveCategory("sobremesas")}
                         className={`px-6 py-2 rounded-xl shadow font-bold text-lg sm:text-xl transition ${activeCategory === "sobremesas"
-                                ? "bg-orange-400 text-white"
-                                : "bg-white text-gray-700 hover:bg-orange-100"
+                            ? "bg-orange-400 text-white"
+                            : "bg-white text-gray-700 hover:bg-orange-100"
                             }`}
                     >
                         Sobremesas
